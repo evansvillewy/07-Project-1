@@ -83,6 +83,8 @@ https://drive.google.com/drive/folders/12zKAAK-5-lbmn5oL5tTOgLlA-8VW0SAz
 ![Crime by year by Temp](Images/bar_binned_crime.png)
 ![Top 4 Crimes by Temp](Images/line_top_four_by_temp.png)
 ![Scatter Crime by Temp](Images/scatter_crime_by_temp.png)
+![Crime count by year- Month](Images/Crime_count_By_Year_Month.png)
+![Crime count by Year_month_Temperature](Images/Crime_count_By_Year_Month_with_temp.png)
 
 ## Key Statistics
 

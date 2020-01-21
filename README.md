@@ -2,12 +2,12 @@
 
 ## Jupyter Notebooks
 
-1. GetDataFromAPIs.ipynb - retrieves the crime and weather data in json format and saves it ti txt files for cleaning
+1. GetDataFromAPIs.ipynb - retrieves the crime and weather data in json format and saves it to txt files for cleaning
 by another jupyter notebook
 2. CleanData.ipynb - cleans and merges the crime and weather data saved in txt files by GetDataFromAPIs.ipynb
 3. TempCentralMeasuresOfTendency.ipynb - Calculates and displays the central measures of tendency for the crime temperature data
-4. CrimeRatesByTemp.ipynb - displays bar charts for the counts by crime type, displays the scatter chart for crime count by temperature, displays the crime count by temperature ranges by 10 degrees, displays the crime rate by temp by the top 4 crime types
-5. CrimeRatesByYearAndTemp - displays the comparison of crime rates by year by temperature.
+4. CrimeRatesByYearAndTemp - displays bar charts for the counts by crime type, displays the scatter chart for crime count by temperature, displays the crime count by temperature ranges by 10 degrees, displays the crime rate by temp by the top 4 crime types
+6. Project-1.ipynb - displays crime count by month
 
 
 ## Does Weather affect Crime Rates?
@@ -30,11 +30,15 @@ by another jupyter notebook
 3. In order to answer our questions, we needed weather data specific to the Chicago area. We also needed Chicago crime data for that same time range.
 
 https://home.openweathermap.org/
+
 https://data.cityofchicago.org/
+
+All the project files are located in the google drive at the following location:
+https://drive.google.com/drive/folders/12zKAAK-5-lbmn5oL5tTOgLlA-8VW0SAz
 
 ## Data Cleanup & Exploration
 
-1. The cleanup process involved downloading the necessary data from the sources. The data was saved inn json text files to prevent API overuse.
+1. The cleanup process involved downloading the necessary data from the sources. The data was saved in json text files to prevent API overuse.
 2. The json files were shared amongst the team for analysis via a team google drive due to data volume and limitations of github.
 3. Due to the academic nature of this project, team members did their own cleaning based on the way we divided up the project.
 4. The crime data for each year was concatenated to provide one crime data set.
@@ -52,7 +56,7 @@ https://data.cityofchicago.org/
 	Overall crime rates took a dip around 50 degrees in 2016 & 2017 but not 2015. This raises more questions about the data.
 
 8. Temperatures were rounded for smoother charting and counts by degree.
-9. To ensure our data had a normal distribution we created a histogram with a mean line and looked at the standard deviations.
+9. To identify the data distribution we created a histogram with a mean line and looked at the standard deviations.
 10. For sanity check, the min and max temperatures were captured, merged dataframe was previewed. Counts, types
 
 ![Distribution](Images/distribution_crime_by_temp.png)
@@ -61,18 +65,38 @@ https://data.cityofchicago.org/
 ## Data Analysis
 
 1. To determine if weather impacted crime rates we:
-    graphed crime counts by type to understand crime volume by type
+    crime counts by type
     crime rates by temperature
     crime rates by year and temperature
     crime rates by type and temperature
+	crime count by month 
+
+	The date of provided in the crime data is translated to Year+Month. The crime data is grouped by month and plotted.
+	The temperature was averaged over the month and a plot is made.
+	Maximum temperature between 2015-2017 is 94.8 degrees Fahrenheit and minimum temperature is -7.
+	To plot the temperature and crime count a “Logarithmic” plot is used.
+	The plot below shows the crime rate by month varies sinusoidal over the year, peaking during June and July and vanning to a low during February.
 
 2. Looking at these charts it was easy to see that weather impacts crime rates
 
 ![Top Ten Crimes](Images/bar_top_10_chicago_crimes.png)
-![Crime by Temp](Images/bar_binned_crime.png)
-![Crime by Year by Temp](Images/line_by_year_by_temp.png)
+![Crime by year by Temp](Images/bar_binned_crime.png)
 ![Top 4 Crimes by Temp](Images/line_top_four_by_temp.png)
 ![Scatter Crime by Temp](Images/scatter_crime_by_temp.png)
+
+## Key Statistics
+
+	The city of Chicago 2015-2017
+	26307 weather measurements
+	802022 Crimes
+	Minimum temperature -8
+	Maximum temperature 95
+	Mean temperature 55
+	Peak crime months June & July
+	Least crime month February
+	Top 4 crimes - Theft, Battery, Damage, Assault
+
+	Data loss 471 crime records due to 6 hour weather report gap between GMT & CST
 
 ## Discussion
 
@@ -86,4 +110,6 @@ https://data.cityofchicago.org/
 1. Difficulties arose trying to plot all crimes at all temperature points. Rounding and Binning of the data into bins of 10 degrees made the charting smoother.
 3. We were interested to know whether there were any particular crime types that weren’t impacted by weather but would require more time to analyze.
 4. If we had more time we would focus on crime by community, district, ward and beat. The Chicago crime data is rich and free from the City of Chicago.
+
+
 
